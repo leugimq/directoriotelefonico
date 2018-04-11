@@ -1,0 +1,29 @@
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<tr>
+<td>Secretaria:</td>
+<td><label>
+<select name="select" class="textfields" id="SEsecretaria">
+<option id="0">--- seleciona secre ----</option>
+<?php
+	requiere("_assets/config/dbc.php");
+	$getallsecretarias = mysql_query("select * from secretaria");
+	while ($viewallSecretarias = mysql_fetch_array($getallsecretarias)){
+?>
+<option id="<?php echo $viewallSecretarias['id_secretaria']; ?>">
+<?php echo $viewallSecretarias['nombre']  ?></option>
+<?php } ?>
+</select>
+</label></td>
+</tr>
+
+</select>
+
+</html>
